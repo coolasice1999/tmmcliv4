@@ -36,7 +36,7 @@ RUN \
 # Fix Java Segmentation Fault
 RUN wget "https://www.archlinux.org/packages/core/x86_64/zlib/download" -O /tmp/libz.tar.xz \
     && mkdir -pv /tmp/libz \
-    && tar -xfv /tmp/libz.tar.xz -C /tmp/libz \
+    && tar -xfvC /tmp/libz.tar.xz /tmp/libz \
     && cp -v /tmp/libz/usr/lib/libz.so.1.2.11 /usr/glibc-compat/lib \
     && /usr/glibc-compat/sbin/ldconfig \
     && rm -rfv /tmp/libz /tmp/libz.tar.xz
