@@ -28,6 +28,9 @@ RUN \
         libmediainfo \
         bash \
         tar \
+        ttf-dejavu \
+        zenity \
+        zstd \
         gettext
 
 # Fix Java Segmentation Fault
