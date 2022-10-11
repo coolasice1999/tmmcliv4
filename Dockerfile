@@ -5,6 +5,7 @@ ARG TMM_VERSION=4.3.4
 # Define software download URLs.
 ARG TMM_URL=https://release.tinymediamanager.org/v4/dist/tmm_${TMM_VERSION}_linux-amd64.tar.gz
 ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jre/bin
+
 # Define working directory.
 WORKDIR /tmp
 
@@ -15,7 +16,9 @@ ENV TZ America/New_York
 #add helper packages
 COPY helpers/* /usr/local/bin/
 COPY ./entrypoint.sh /mnt/entrypoint.sh
+
 RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod +x /mnt/entrypoint.sh
+
 # Download TinyMediaManager
 RUN \
     mkdir -p /defaults && \
@@ -24,6 +27,7 @@ RUN \
 # Install dependencies.
 RUN \
     add-pkg \
+        add --update \
         openjdk8-jre \
         libmediainfo \
         bash \
