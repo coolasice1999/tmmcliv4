@@ -1,6 +1,6 @@
 FROM frolvlad/alpine-glibc:latest
 # Define software versions.
-ARG TMM_VERSION=4.2.7
+ARG TMM_VERSION=4.3.4
 
 # Define software download URLs.
 ARG TMM_URL=https://release.tinymediamanager.org/v4/dist/tmm_${TMM_VERSION}_linux-amd64.tar.gz
