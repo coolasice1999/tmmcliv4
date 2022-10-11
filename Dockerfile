@@ -27,6 +27,7 @@ RUN \
         openjdk8-jre \
         libmediainfo \
         bash \
+        tar \
         gettext
 
 # Fix Java Segmentation Fault
