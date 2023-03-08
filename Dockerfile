@@ -27,7 +27,6 @@ RUN \
 # Install dependencies.
 RUN \
     add-pkg \
-        apk --u && \
         openjdk8-jre \
         libmediainfo \
         bash \
