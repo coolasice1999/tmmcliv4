@@ -39,10 +39,11 @@ RUN \
 # Fix Java Segmentation Fault
 RUN wget "https://www.archlinux.org/packages/core/x86_64/zlib/download" -O /tmp/libz.tar.zst \
     && mkdir -pv /tmp/libz \
-    && tar --use-compress-program=unzstd -xfvC /tmp/libz.tar.zst /tmp/libz \
+    && unzstd -v /tmp/libz.tar.zst \
+    && tar -xfvC /tmp/libz.tar /tmp/libz \
     && cp -v /tmp/libz/usr/lib/libz.so.1.2.13 /usr/glibc-compat/lib \
     && /usr/glibc-compat/sbin/ldconfig \
-    && rm -rfv /tmp/libz /tmp/libz.tar.zst
+    && rm -rfv /tmp/libz /tmp/libz.tar.zst /tmp/libz.tar
 
 # Add files.
 COPY rootfs/ /
