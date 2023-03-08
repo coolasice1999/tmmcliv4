@@ -37,12 +37,12 @@ RUN \
         gettext
 
 # Fix Java Segmentation Fault
-RUN wget "https://www.archlinux.org/packages/core/x86_64/zlib/download" -O /tmp/libz/libz.tar.zst \
-    && unzstd -v /tmp/libz/libz.tar.zst \
-    && tar -xvf /tmp/libz/libz.tar -C /tmp/libz \
-    && cp -v /tmp/libz/usr/lib/libz.so.1.2.13 /usr/glibc-compat/lib \
-    && /usr/glibc-compat/sbin/ldconfig \
-    && rm -rfv /tmp/libz
+#RUN wget "https://www.archlinux.org/packages/core/x86_64/zlib/download" -O /tmp/libz/libz.tar.zst \
+#    && unzstd -v /tmp/libz/libz.tar.zst \
+#   && tar -xvf /tmp/libz/libz.tar -C /tmp/libz \
+#    && cp -v /tmp/libz/usr/lib/libz.so.1.2.13 /usr/glibc-compat/lib \
+#    && /usr/glibc-compat/sbin/ldconfig \
+#    && rm -rfv /tmp/libz
 # Add files.
 COPY rootfs/ /
 
