@@ -26,7 +26,6 @@ RUN \
 # Install dependencies.
 RUN \
     add-pkg \
-        openjdk17-jre \
         libmediainfo \
         bash \
         tar \
