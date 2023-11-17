@@ -26,7 +26,7 @@ RUN \
 # Install dependencies.
 RUN \
     add-pkg \
-        openjdk8-jre \
+        openjdk20-jre \
         libmediainfo \
         bash \
         tar \
