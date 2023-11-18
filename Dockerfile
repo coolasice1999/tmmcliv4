@@ -20,6 +20,7 @@ RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod 
 
 # Download TinyMediaManager
 RUN \
+    apt-install wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz
 
