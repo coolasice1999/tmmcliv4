@@ -32,7 +32,6 @@ RUN \
         libmediainfo0v5 \
         bash \
         tar \
-        ttf-dejavu \
         zenity \
         zstd \
         gettext
