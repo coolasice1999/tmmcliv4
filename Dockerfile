@@ -34,7 +34,8 @@ RUN \
         tar \
         zenity \
         zstd \
-        gettext
+        gettext \
+        crontab
 
 # Fix Java Segmentation Fault
 # RUN mkdir -p /tmp/libz \
