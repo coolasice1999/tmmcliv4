@@ -1,11 +1,11 @@
 #!/bin/sh
 
-if [ ! -f /mnt/cron.conf ]; then
+if [ ! -f /config/cron.conf ]; then
 #set time to 12:30AM run for movies and 12:45AM run for tvshows
-    echo -e "30 0 * * * /config/tinyMediaManager.sh movie -u --scrapeUnscraped\n45 0 * * * /config/tinyMediaManager.sh tvshow -u --scrapeUnscraped\n" > /mnt/cron.conf
+    echo -e "30 0 * * * /config/tinyMediaManager.sh movie -u --scrapeUnscraped\n45 0 * * * /config/tinyMediaManager.sh tvshow -u --scrapeUnscraped\n" > /config/cron.conf
 fi
 chmod 777 /config/*
-chmod 600 /mnt/cron.conf
-crontab /mnt/cron.conf
+chmod 600 /config/cron.conf
+crontab /config/cron.conf
 
 exec "$@"
