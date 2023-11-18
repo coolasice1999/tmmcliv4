@@ -9,7 +9,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jre/b
 WORKDIR /tmp
 
 #set timezone 
-RUN apt-install --no-cache tzdata
+RUN apt-install -y nocache tzdata
 ENV TZ America/New_York
 
 #add helper packages
