@@ -23,7 +23,8 @@ RUN \
     apt update && \
     apt-get install -y wget && \
     mkdir -p /defaults && \
-    wget ${TMM_URL} -O /defaults/tmm.tar.gz
+    wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
+    rm -rf /var/lib/apt/lists/*
 
 # Install dependencies.
 RUN \
