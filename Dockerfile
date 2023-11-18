@@ -19,8 +19,8 @@ COPY ./entrypoint.sh /mnt/entrypoint.sh
 RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod +x /mnt/entrypoint.sh
 
 # Download TinyMediaManager
-RUN apt-get install -v wget
 RUN \
+    apt-get install -v wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz
 
