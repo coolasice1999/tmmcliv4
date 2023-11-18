@@ -21,6 +21,7 @@ RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod 
 # Download TinyMediaManager
 RUN \
     apt update && \
+    apt-get install -y cron && \
     apt-get install -y wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
@@ -35,8 +36,7 @@ RUN \
         tar \
         zenity \
         zstd \
-        gettext \
-        cron && \
+        gettext && \
     rm -rf /var/lib/apt/lists/*
 
 # Fix Java Segmentation Fault
