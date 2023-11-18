@@ -1,4 +1,4 @@
-FROM frolvlad/alpine-glibc:latest
+FROM debian:stable-slim:latest
 # Define software versions.
 ARG TMM_VERSION=4.3.14
 # Define software download URLs.
@@ -9,7 +9,7 @@ ENV PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/jre/b
 WORKDIR /tmp
 
 #set timezone 
-RUN apk add --no-cache tzdata
+RUN apt-install --no-cache tzdata
 ENV TZ America/New_York
 
 #add helper packages
@@ -25,7 +25,8 @@ RUN \
 
 # Install dependencies.
 RUN \
-    add-pkg \
+    apt-get update \
+    && apt-install \
         libmediainfo \
         bash \
         tar \
