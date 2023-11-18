@@ -29,7 +29,7 @@ RUN \
 RUN \
     apt-get update \
     && apt install \
-        libmediainfo \
+        libmediainfo0v5 \
         bash \
         tar \
         ttf-dejavu \
