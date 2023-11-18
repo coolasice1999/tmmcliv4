@@ -1,4 +1,4 @@
-FROM debian:stable-slim:latest
+FROM debian:stable-slim
 # Define software versions.
 ARG TMM_VERSION=4.3.14
 # Define software download URLs.
