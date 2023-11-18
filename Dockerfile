@@ -35,7 +35,8 @@ RUN \
         zenity \
         zstd \
         gettext \
-        crontab
+        cron && \
+    rm -rf /var/lib/apt/lists/*
 
 # Fix Java Segmentation Fault
 # RUN mkdir -p /tmp/libz \
