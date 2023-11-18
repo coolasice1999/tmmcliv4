@@ -28,7 +28,7 @@ RUN \
 # Install dependencies.
 RUN \
     apt-get update \
-    && apt install \
+    && apt install -y \
         libmediainfo0v5 \
         bash \
         tar \
