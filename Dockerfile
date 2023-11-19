@@ -25,6 +25,7 @@ RUN \
     apt-get install -y wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Install dependencies.
@@ -32,11 +33,9 @@ RUN \
     apt-get update \
     && apt install -y \
         libmediainfo0v5 \
-        bash \
         tar \
-        zenity \
-        zstd \
         gettext && \
+        apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 # Fix Java Segmentation Fault
