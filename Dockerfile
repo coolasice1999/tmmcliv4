@@ -56,7 +56,7 @@ VOLUME ["/media"]
 
 
 ENTRYPOINT ["/mnt/entrypoint.sh"]
-CMD ["/usr/sbin/cron", "-f", "-d", "0"] 
+CMD ["/usr/sbin/cron", "-f"] 
 
 # Metadata.
 LABEL \
