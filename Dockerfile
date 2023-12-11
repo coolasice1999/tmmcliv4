@@ -27,6 +27,8 @@ RUN \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+# Copy over .sh script for tmm
+COPY start/* /defaults/
 
 # Install dependencies.
 RUN \
