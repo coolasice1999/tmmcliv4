@@ -28,7 +28,7 @@ RUN \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 # Copy over .sh script for tmm
-COPY start/* /defaults/
+COPY startup/* /defaults/
 
 # Install dependencies.
 RUN \
