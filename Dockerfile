@@ -24,9 +24,7 @@ RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod 
 # Download TinyMediaManager
 RUN \
     apt update && \
-    apt-get install -y cron && \
-    apt-get install -y locals && \
-    apt-get install -y wget && \
+    apt-get install -y cron locales locales-all wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
     apt-get clean && \
