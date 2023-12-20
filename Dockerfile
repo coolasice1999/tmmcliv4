@@ -11,6 +11,7 @@ WORKDIR /tmp
 #set timezone 
 # RUN apt-install -y nocache tzdata
 ENV TZ America/New_York
+ENV LANG=en_US.utf8
 
 #add helper packages
 COPY helpers/* /usr/local/bin/
