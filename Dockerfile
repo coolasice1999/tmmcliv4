@@ -11,7 +11,9 @@ WORKDIR /tmp
 #set timezone 
 # RUN apt-install -y nocache tzdata
 ENV TZ America/New_York
-ENV LANG=en_US.utf8
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
 #add helper packages
 COPY helpers/* /usr/local/bin/
@@ -23,6 +25,7 @@ RUN chmod +x /usr/local/bin/add-pkg && chmod +x /usr/local/bin/del-pkg && chmod 
 RUN \
     apt update && \
     apt-get install -y cron && \
+    apt-get install -y locals locals-all && \
     apt-get install -y wget && \
     mkdir -p /defaults && \
     wget ${TMM_URL} -O /defaults/tmm.tar.gz && \
